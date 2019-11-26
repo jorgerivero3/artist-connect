@@ -42,13 +42,31 @@
             <a class="nav-link" href="#">Bands</a>
           </li>
 		  <li class="nav-item">
-            <a class="nav-link" href="#">Log In</a>
+            <button class="open-button" onclick="openForm()"><strong>Login</strong></button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
+  
+  <div id="login-popup">
+      <div class="form-popup" id="popupForm">
+        <form action="" class="form-container">
+          <h2>Please Log in</h2>
+          <label for="email">
+          <strong>E-mail</strong>
+          </label>
+          <input type="text" id="email" placeholder="Your Email" name="email" required>
+          <label for="psw">
+          <strong>Password</strong>
+          </label>
+          <input type="password" id="psw" placeholder="Your Password" name="psw" required>
+          <button type="submit" class="btn">Log in</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+   </div>
+	
   <!-- Header -->
   <header class="py-5 mb-5">
     <div class="container h-100">
@@ -133,6 +151,21 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
+  <script>
+      function openForm() {
+        document.getElementById("login-popup").style.display="block";
+      }
+      
+      function closeForm() {
+        document.getElementById("login-popup").style.display="none";
+      }
+	  window.onclick = function(event) {
+        var modal = document.getElementById('loginPopup');
+        if (event.target == modal) {
+          closeForm();
+        }
+      }
+   </script>
  
 
 </body>

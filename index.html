@@ -154,14 +154,14 @@
             <div class="modal-body mb-1">
               <div class="md-form form-sm mb-5">
                 <i class="fas fa-envelope prefix"></i>
-                <input type="email" id="username" class="form-control form-control-sm validate">
-                <label data-error="wrong" data-success="right" for="modalLRInput10">Your username</label>
+                <input type="email" name="username" id="username" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="username">Your username</label>
               </div>
 
               <div class="md-form form-sm mb-4">
                 <i class="fas fa-lock prefix"></i>
-                <input type="password" id="password" class="form-control form-control-sm validate">
-                <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+                <input type="password" name="password" id="password" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="password">Your password</label>
               </div>
 			  </form>
               <div class="text-center mt-2">
@@ -185,23 +185,23 @@
 
             <!--Body-->
             <div class="modal-body">
-			<form action = "" method="post" name="registerForm" id="register_form">
+			<form action = "./register.php" method="post" name="registerForm" id="register_form">
               <div class="md-form form-sm mb-5">
                 <i class="fas fa-envelope prefix"></i>
-                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
-                <label data-error="wrong" data-success="right" for="modalLRInput12">Your username</label>
+                <input type="email" id="reg_username" name="reg_username" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="reg_username">Your username</label>
               </div>
 
               <div class="md-form form-sm mb-5">
                 <i class="fas fa-lock prefix"></i>
-                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
-                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                <input type="password" id="reg_password_1" name="reg_password_1" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="reg_password_1">Your password</label>
               </div>
 
               <div class="md-form form-sm mb-4">
                 <i class="fas fa-lock prefix"></i>
-                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
-                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                <input type="password" id="reg_password_2" name="reg_password_2" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="reg_password_2">Repeat password</label>
               </div>
 			</form>
               <div class="text-center form-sm mt-2">

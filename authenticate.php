@@ -39,6 +39,7 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $_POST['username'];
 		$_SESSION['id'] = $id;
+		$_SESSION['username'] = $_POST['username'];
 		echo 'Welcome ' . $_SESSION['name'] . '!';
 	} else {
 		echo 'Incorrect password!';
@@ -47,4 +48,5 @@ if ($stmt->num_rows > 0) {
 	echo 'Incorrect username!';
 }
 $stmt->close();
+header('location: profile.php');
 ?>

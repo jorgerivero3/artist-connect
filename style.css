@@ -9,7 +9,18 @@
   background-size: cover;
 }*/
 
+#card1 {
+	position:fixed;
+	top: 200px;
+	right: 600px;
+	
+}
 
+#card2 {
+	position:fixed;
+	top: 500px;
+	right: 600px;
+}
 
 .arrow{
 	width: 50px;

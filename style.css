@@ -96,7 +96,7 @@ header{
   padding-bottom: 500px;
 }
 
-i{
+.fa-angle-down{
   color: white;
   font-size: 50px;
 }
@@ -139,4 +139,19 @@ footer{
 #main_logo{ 
 	width: 50%;
 	height: 25%;
-}*/*/
+}
+
+.social{
+  padding-left: 0px;
+}
+
+.social i{
+  font-size: 60px;
+
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.social i:hover{
+  color: blue;
+}

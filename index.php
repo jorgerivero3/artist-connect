@@ -36,8 +36,6 @@
   $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
   $result = mysqli_query($con, $photo);
   $r = mysqli_fetch_array($result);
-  
-  //profile page  
 
 ?>
  
@@ -53,7 +51,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Artist Connect</a>
+      <a class="navbar-brand" href="./index.php">Artist Connect</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,17 +63,17 @@
             <?php endif ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./bands.html">About</a>
+            <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./venue.html">Venues</a>
+            <a class="nav-link" href="./venues.php">Venues</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./bands.html">Bands</a>
+            <a class="nav-link" href="./bands.php">Bands</a>
           </li>
 		  <li class="nav-item">
         <?php  if (isset($_SESSION['username'])) : ?>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Logout</a>
+            <a href="./logout.php" class="btn btn-primary">Logout</a>
         <?php else : ?>
           <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
         <?php endif ?>

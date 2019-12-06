@@ -46,35 +46,41 @@
 </head>
 <body>
 
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Artist Connect</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Venues</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="bands.html">Bands</a>
-          </li>
-		   <li class="nav-item">
-        <?php  if (isset($_SESSION['username'])) : ?>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Logout</a>
-        <?php else : ?>
-          <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
-        <?php endif ?>
-      </li>
-        </ul>
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.php">Artist Connect</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <?php  if (isset($_SESSION['username'])) : ?>
+              <a class="nav-link" href="./profile.php">Profile</a>
+              <?php endif ?>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./venues.php">Venues</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bands.php">Bands</a>
+            </li>
+        <li class="nav-item">
+          <?php  if (isset($_SESSION['username'])) : ?>
+              <a href="./logout.php" class="btn btn-primary">Logout</a>
+          <?php else : ?>
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
+          <?php endif ?>
+        </li>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   
 <div class="container profile pt-5">
     <!-- logged in user information -->

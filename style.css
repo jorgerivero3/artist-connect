@@ -1,4 +1,4 @@
-
+/*/*
 /*.carousel-item {
   height: 100vh;
   min-height: 350px;
@@ -19,11 +19,17 @@
 
 .arrow_div{
 	text-align: center;
+  transform: translateY(100%);
 }
 
 .arrow_div p{
 	font-size: x-small;
 	color: #C8C8C8;
+
+}
+
+header{
+  padding-bottom: 100px;
 }
 
 /*.carousel { z-index: -99; } 
@@ -42,15 +48,35 @@
 	top: 50%;
 	transform: translateY(-50%);
 	bottom: initial;
+
 }
 
 .carousel-caption{
 	text-align: center;
 }
 
+.home h1{
+	font-size: 6vw;
+  color: white; 
+}
+
+.home h3{
+  color: white;
+  font-size: 2vw;
+}
+
+.home p{
+  color: white;
+}
+
+
+
+.carousel-caption h3{
+  font-size: 2vw;
+}
 
 .carousel-caption p{
-	font-size: large;
+  font-size: 1vw;
 }
 
 .overlay {
@@ -59,23 +85,22 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #2F4F4F;
-  opacity: 0.7;
+  background-color: black;
+  opacity: 0.3;
   z-index: 1;
 }
 
-.masthead {
-  height: 100vh;
-  min-height: 500px;
-  background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
+#band{
+  padding-bottom: 500px;
 }
 
-.masthead h1{
-	
+i{
+  color: white;
+  font-size: 50px;
+}
+
+.home{
+ background-color:  #404040;
 }
 
 /*header h1{
@@ -93,10 +118,10 @@
 
 
 footer{
-	background-color: #05386b;
+	background-color: black;
 }
 
 #main_logo{ 
 	width: 50%;
 	height: 25%;
-}
+}*/*/

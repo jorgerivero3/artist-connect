@@ -16,12 +16,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- Custom styles for this template -->
-
+ <link href="./css/all.css" rel="stylesheet">
   <link href="./style.css" rel="stylesheet">
+ 
+  
+
+  
+<!--   <script defer src="./js/all.js"></script> -->
 
 </head>
 
-<body>
+<body class="home">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
@@ -50,8 +55,8 @@
     </div>
   </nav>
 
-
-    <div id="bands" class="carousel slide pb-5" data-ride="carousel" data-interval="5000">
+<!-- Carousel -->
+    <div id="bands" class="carousel slide pb-5" data-ride="carousel" data-interval="3000">
       <ol class="carousel-indicators">
         <li data-target="#bands" data-slide-to="0" class="active"></li>
         <li data-target="#bands" data-slide-to="1"></li>
@@ -62,14 +67,14 @@
 
         <div class="carousel-item active">
           <div class="overlay"></div>
-          <img class="d-block w-100 h-10" src="./band1.jpg" alt="First slide">
+          <img class="d-block w-100" src="./band1.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption text-left">
                 <h1>Artist Connect</h1>
                 <h3>Empowering local artists to find their audience.</h3>
                 <div class="arrow_div pt-5">
                   <p>Scroll down</p>
-                  <img class="arrow" src="arrow-down-sign-to-navigate.svg" alt="Down arrow">
+                  <i class="fas fa-angle-down"></i>
                 </div>
                 
             </div>
@@ -81,14 +86,16 @@
 
         <div class="carousel-item">
           <div class="overlay"></div>
-          <img class="d-block w-100 h-10" src="main2.jpg" alt="Second slide">
+          <img class="d-block w-100" src="main2.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-                <h1>Made For Bands</h1>
-                <h3>We made a platform where bands can get discovered by local venues and expand their audience.</h3>
+              <div class="main-text">
+                <h1>Made For Musicians</h1>
+                <h3>Let your sound be heard</h3>
+              </div>
                 <div class="arrow_div pt-5">
                   <p>Scroll down</p>
-                  <img class="arrow" src="arrow-down-sign-to-navigate.svg" alt="Down arrow">
+                  <i class="fas fa-angle-down"></i>
                 </div>
             </div>
           </div>
@@ -96,18 +103,17 @@
 
         <div class="carousel-item">
           <div class="overlay"></div>
-          <img class="d-block w-100 h-1" src="main3.jpg" alt="Third slide">
+          <img class="d-block w-100" src="main3.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption text-right">
                 <h1>Great For Venues</h1>
                 <h3>Bring in more customers with great local acts.</h3>
                 <div class="arrow_div pt-5">
                   <p>Scroll down</p>
-                  <img class="arrow" src="arrow-down-sign-to-navigate.svg" alt="Down arrow">
+                  <i class="fas fa-angle-down"></i>
                 </div>
             </div>
           </div>
-        </div>
 
       </div>
       <a class="carousel-control-prev" href="#bands" role="button" data-slide="prev">
@@ -119,23 +125,37 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-
-
+</div>
 
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container-fluid w-full">
 
     <!-- Company Info -->
-    <div class="row">
-      <div class="col-md-8 mb-5">
-        <h2>What We Do</h2>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-        <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
+    <div class="row justify-content-end ml-5 pb-5 mt-5">
+      <div class="ml-2 mb-5">
+        <h1>Get Discovered</h1>
+        <h3 class="pt-5">We help artists get discovered by showcasing your art to live venues. They can easily view through our catalog.</h3>
       </div>
-      <div class="col-md-4 mb-5">
+    </div>
+
+    <div class="row justify-content-end mr-5 mt-5 ">
+      <div class=" mb-5 text-right">
+        <h1>Increase Patronage</h1>
+        <h3 class="pt-5">Draw in crowds with a variety of local artists.</h3>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+      <div class="mb-5 text-center">
+        <h3>Join the connection</h3>
+        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Sign Up &raquo;</a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+   <!--  <div class="row">
+    <div class="col-md-4 mb-5">
         <h2>Contact Us</h2>
         <hr>
         <address>
@@ -152,8 +172,7 @@
           <a href="mailto:#">name@example.com</a>
         </address>
       </div>
-    </div>
-    <!-- /.row -->
+    </div> -->
 
     <!-- /.row -->
 
@@ -207,7 +226,7 @@
             <div class="modal-footer">
               <div class="options text-center text-md-right mt-1">
                 <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
-                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                <p><a href="#" class="blue-text">Forgot Password?</a></p>
               </div>
               <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
             </div>

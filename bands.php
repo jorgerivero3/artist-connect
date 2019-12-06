@@ -60,10 +60,10 @@
 	  		<img alt="image of band" src="./band.jpg" class="img-thumbnail" style="width: 300px;">
 	  	</div>
 	  	<div class="col">
-	  		<a href="./band.html"><h2>Station One</h2></a>
+	  		<a href="./band.php"><h2>Station One</h2></a>
 	  		<p>Genre: Blues</p>
 	  		<h5>Bio</h5>
-	  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
+	  		<p>From the heart of Texas. Starting out in their garage here in town, they have brought a unique mix of blues to the Austin live music scene.</p>
 	  	</div>
 	  </div>
 	  <hr>
@@ -73,7 +73,7 @@
 	  		<img alt="image of band" src="./band2.jpg" class="img-thumbnail" style="width: 300px;">
 	  	</div>
 	  	<div class="col">
-	  		<a href="./band.html"><h2>Intercept</h2></a>
+	  		<a href="./band.php"><h2>Intercept</h2></a>
 	  		<p>Genre: Rock</p>
 	  		<h5>Bio</h5>
 	  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
@@ -86,7 +86,7 @@
 	  		<img alt="image of band" src="./band3.jpg" class="img-thumbnail" style="width: 300px;">
 	  	</div>
 	  	<div class="col">
-	  		<a href="./band.html"><h2>Juice and The Suds</h2></a>
+	  		<a href="./band.php"><h2>Juice and The Suds</h2></a>
 	  		<p>Genre: Indie</p>
 	  		<h5>Bio</h5>
 	  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>

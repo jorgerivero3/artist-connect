@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php
+		session_start();
+	?>
 	<title></title>
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -53,13 +56,12 @@
 	  </nav>
 
 	  <div class="container pb-5">
-	  <h1 style="padding-top: 15px; padding-bottom: 15px;">Bands</h1>
 	  <div class="row">
 	  	<div class="col-4-">
 	  		<img alt="image of band" src="./band.jpg" class="img-thumbnail" style="width: 500px;">
 	  	</div>
 	  	<div class="col">
-	  		<h2>Station 8</h2>
+	  		<h2>Station One</h2>
 	  		<p>Genre: Blues</p>
 	  		<button>Save to Favorites</button>
 	  		<button>Send a message</button>
@@ -67,8 +69,10 @@
 	  </div>
 	  <br>
 	  <div class="row">
+	  <div class="col">
 	  <h5>Bio</h5><br> 
-	  		<p>From the heart of Texas. From their basement here in town, they have brought a unique mix of blues to the Austin live music scene.</p>
+	  		<p>From the heart of Texas. Starting out in their garage here in town, they have brought a unique mix of blues to the Austin live music scene.</p>
+	  		</div>
 	  </div>
 	  <div class="row">
 	  	<h5>Links</h5>

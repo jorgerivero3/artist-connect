@@ -12,7 +12,7 @@
 	die ('Failed to connect to MySQL: ' . $con->connect_error);
 }
   $username = $_SESSION['username'];
-  $photo = "SELECT imagePath FROM accounts WHERE username='$username'";
+  $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
   $result = mysqli_query($con, $photo);
   $r = mysqli_fetch_array($result);
 	
@@ -86,9 +86,20 @@
     <input type="submit" value="Upload Image" name="submit">
 	
 </form>
-	<!--- add a image location here -->
+	<!--- image location here -->
 	<div>
 	<?php echo '<img src="'.$r['imagePath'].'">'; ?>
+	</div>
+	
+	<!--- name here -->
+	<div>
+		<?php echo $r['name']; ?>
+		<form action="./name.php" method="post">
+		Edit Name:
+		<input type="text" name="bandName" id="bandName">
+		<input type="submit" value="Submit Name" name="submit">
+	
+		</form>
 	</div>
 	
 	<!--- add description here -->

@@ -1,29 +1,4 @@
-<?php
-  session_start(); 
-  //connection to database
-  $DATABASE_HOST = 'localhost';
-  $DATABASE_USER = 'cs329e_mitra_mmooring';
-  $DATABASE_PASS = 'banal5Fix3Soon';
-  $DATABASE_NAME = 'cs329e_mitra_mmooring';
-  // Try and connect using the info above.
-  $con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-  if ( $con->connect_error ) {
-   	// If there is an error with the connection, stop the script and display the error.
-	die ('Failed to connect to MySQL: ' . $con->connect_error);
-}
-  $username = $_SESSION['username'];
-  $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
-  $result = mysqli_query($con, $photo);
-  $r = mysqli_fetch_array($result);
-	
-  //profile page  
-  if (!isset($_SESSION['username'])) {
-  	echo "Please login to access this page";
-  }
 
-?>
-
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -41,14 +16,38 @@
   <!-- Custom styles for this template -->
 
   <link href="./style.css" rel="stylesheet">
+
+  <?php
+  session_start(); 
+  //connection to database
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'cs329e_mitra_mmooring';
+  $DATABASE_PASS = 'banal5Fix3Soon';
+  $DATABASE_NAME = 'cs329e_mitra_mmooring';
+  // Try and connect using the info above.
+  $con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+  if ( $con->connect_error ) {
+    // If there is an error with the connection, stop the script and display the error.
+  die ('Failed to connect to MySQL: ' . $con->connect_error);
+}
+  $username = $_SESSION['username'];
+  $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
+  $result = mysqli_query($con, $photo);
+  $r = mysqli_fetch_array($result);
+  
+  //profile page  
+  if (!isset($_SESSION['username'])) {
+    echo "Please login to access this page" . "<br>";
+    echo "<a href='./index.html'>Return home</a>";
+    return;
+  }
+
+?>
 </head>
 <body>
 
-<div class="header">
-	<h2>Home Page</h2>
-</div>
 <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Artist Connect</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,21 +62,34 @@
             <a class="nav-link" href="#">Venues</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Bands</a>
+            <a class="nav-link" href="bands.html">Bands</a>
           </li>
-		  <li class="nav-item">
-            <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Login</a>
-		  </li>
-          </li>
+		   <li class="nav-item">
+        <?php  if (isset($_SESSION['username'])) : ?>
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Logout</a>
+        <?php else : ?>
+          <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
+        <?php endif ?>
+      </li>
         </ul>
       </div>
     </div>
   </nav>
   
-<div class="content">
+<div class="container profile pt-5">
     <!-- logged in user information -->
+
+<!--- image location here -->
+  <div class="row">
+    <div>
+      <?php echo '<img class="" src="'.$r['imagePath'].'">'; ?>
+    </div>
+    <div class="col-md-9">
+      <?php echo "<h1>" .$r['name'] . "</h1>"; ?>
+    </div>
+  </div>
     <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<h3>Welcome <strong><?php echo $_SESSION['username']; ?></strong></h3>
     <?php endif ?>
 	
 	<form action="./upload.php" method="post" enctype="multipart/form-data">
@@ -86,14 +98,11 @@
     <input type="submit" value="Upload Image" name="submit">
 	
 </form>
-	<!--- image location here -->
-	<div>
-	<?php echo '<img src="'.$r['imagePath'].'">'; ?>
-	</div>
+	
+	
 	
 	<!--- name here -->
 	<div>
-		<?php echo $r['name']; ?>
 		<form action="./name.php" method="post">
 		Edit Name:
 		<input type="text" name="bandName" id="bandName">

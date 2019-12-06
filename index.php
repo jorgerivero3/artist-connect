@@ -18,6 +18,28 @@
   <!-- Custom styles for this template -->
  <link href="./css/all.css" rel="stylesheet">
   <link href="./style.css" rel="stylesheet">
+
+  <?php
+  session_start(); 
+  //connection to database
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'cs329e_mitra_mmooring';
+  $DATABASE_PASS = 'banal5Fix3Soon';
+  $DATABASE_NAME = 'cs329e_mitra_mmooring';
+  // Try and connect using the info above.
+  $con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+  if ( $con->connect_error ) {
+    // If there is an error with the connection, stop the script and display the error.
+  die ('Failed to connect to MySQL: ' . $con->connect_error);
+}
+  $username = $_SESSION['username'];
+  $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
+  $result = mysqli_query($con, $photo);
+  $r = mysqli_fetch_array($result);
+  
+  //profile page  
+
+?>
  
   
 
@@ -38,16 +60,25 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <?php  if (isset($_SESSION['username'])) : ?>
+            <a class="nav-link" href="./profile.php">Profile</a>
+            <?php endif ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Venues</a>
+            <a class="nav-link" href="./bands.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Bands</a>
+            <a class="nav-link" href="./venue.html">Venues</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./bands.html">Bands</a>
           </li>
 		  <li class="nav-item">
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
+        <?php  if (isset($_SESSION['username'])) : ?>
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Logout</a>
+        <?php else : ?>
+          <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
+        <?php endif ?>
 		  </li>
           </li>
         </ul>
@@ -132,8 +163,8 @@
   <div class="container-fluid w-full">
 
     <!-- Company Info -->
-    <div class="row justify-content-end ml-5 pb-5 mt-5">
-      <div class="ml-2 mb-5">
+    <div class="row justify-content-start ml-5 pb-5 mt-5">
+      <div class="col-md-8 ml-2 mb-5">
         <h1>Get Discovered</h1>
         <h3 class="pt-5">We help artists get discovered by showcasing your art to live venues. They can easily view through our catalog.</h3>
       </div>

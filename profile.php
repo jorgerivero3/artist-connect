@@ -15,7 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- Custom styles for this template -->
 
-  <link href="./style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
 
   <?php
   session_start(); 
@@ -95,7 +95,7 @@
     </div>
   </div>
     <?php  if (isset($_SESSION['username'])) : ?>
-    	<h3>Welcome <strong><?php echo $_SESSION['username']; ?></strong></h3>
+    	<!-- <h3>Welcome <strong><?php echo $_SESSION['username']; ?></strong></h3> -->
     <?php endif ?>
 	
 	<form action="./upload.php" method="post" enctype="multipart/form-data">

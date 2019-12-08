@@ -45,7 +45,7 @@ if (isset($_POST['reg_username'])) {
   if (count($errors) == 0) {
   	$password = $password_1;//encrypt the password before saving in the database
 
-  	$sql = "INSERT INTO accounts (username, email, password, imagePath, name) VALUES('$username','blank@blank.com', '$password', './blank.jpg', '$username . 1')";
+  	$sql = "INSERT INTO accounts (username, email, password, imagePath, name) VALUES('$username','blank@blank.com', '$password', './blank.jpg', '$username ')";
   	$result = $con->query($sql);
 
 	if ($result == true) {

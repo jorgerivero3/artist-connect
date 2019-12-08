@@ -40,7 +40,7 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['username'] = $_POST['username'];
 		$_SESSION['id'] = $id;
 		echo "Login successful";
-		header('Location: ./index.php');
+		header('Location: ./profile.php');
 	} else {
 		echo 'Incorrect password!';
 	}

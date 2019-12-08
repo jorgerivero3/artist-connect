@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Mason and Jorge">
 	<!-- Custom styles for this template -->
-	<link href="./style.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
 
 	<title>Artist Connect - Bands</title>
 	<meta charset="utf-8">
@@ -57,7 +57,7 @@
 	  <h1 style="padding-top: 15px; padding-bottom: 15px;">Venues</h1>
 	  <div class="row">
 	  	<div class="col-2-">
-	  		<img alt="image of band" src="./venue1.jpg" class="img-thumbnail" style="width: 300px;">
+	  		<img alt="image of band" src="./img/venue1.jpg" class="img-thumbnail" style="width: 300px;">
 	  	</div>
 	  	<div class="col">
 	  		<a href="./band.html"><h2>Club 101</h2></a>
@@ -70,7 +70,7 @@ Fullerton, CA 92831</p>
 
 	  <div class="row">
 	  	<div class="col-2-">
-	  		<img alt="image of band" src="./venue2.jpg" class="img-thumbnail" style="width: 300px;">
+	  		<img alt="image of band" src="./img/venue2.jpg" class="img-thumbnail" style="width: 300px;">
 	  	</div>
 	  	<div class="col">
 	  		<a href="./band.html"><h2>The Salty Spitoon</h2></a>
@@ -83,7 +83,7 @@ El Dorado, AR 71730</p>
 
 	  <div class="row">
 	  	<div class="col-1-">
-	  		<img alt="image of band" src="./venue3.jpg" class="img-thumbnail" style="width: 300px;">
+	  		<img alt="image of band" src="./img/venue3.jpg" class="img-thumbnail" style="width: 300px;">
 	  	</div>
 	  	<div class="col">
 	  		<a href="./band.html"><h2>Weenie Hut Jr's</h2></a>

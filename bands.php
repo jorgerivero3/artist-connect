@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Mason and Jorge">
 	<!-- Custom styles for this template -->
-	<link href="./style.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
 
 	<title>Artist Connect - Bands</title>
 	<meta charset="utf-8">
@@ -57,7 +57,7 @@
 	  <h1 style="padding-top: 15px; padding-bottom: 15px;">Bands</h1>
 	  <div class="row">
 	  	<div class="col-2-">
-	  		<img alt="image of band" src="./band.jpg" class="img-thumbnail" style="width: 300px;">
+	  		<img alt="image of band" src="./img/band.jpg" class="img-thumbnail" style="width: 300px;">
 	  	</div>
 	  	<div class="col">
 	  		<a href="./band.php"><h2>Station One</h2></a>
@@ -70,7 +70,7 @@
 
 	  <div class="row">
 	  	<div class="col-2-">
-	  		<img alt="image of band" src="./band2.jpg" class="img-thumbnail" style="width: 300px;">
+	  		<img alt="image of band" src="./img/band2.jpg" class="img-thumbnail" style="width: 300px;">
 	  	</div>
 	  	<div class="col">
 	  		<a href="./band.php"><h2>Intercept</h2></a>
@@ -83,7 +83,7 @@
 
 	  <div class="row">
 	  	<div class="col-1-">
-	  		<img alt="image of band" src="./band3.jpg" class="img-thumbnail" style="width: 300px;">
+	  		<img alt="image of band" src="./img/band3.jpg" class="img-thumbnail" style="width: 300px;">
 	  	</div>
 	  	<div class="col">
 	  		<a href="./band.php"><h2>Juice and The Suds</h2></a>

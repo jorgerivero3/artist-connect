@@ -17,7 +17,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- Custom styles for this template -->
  <link href="./css/all.css" rel="stylesheet">
-  <link href="./style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
 
   <?php
   session_start(); 
@@ -96,7 +96,7 @@
 
         <div class="carousel-item active">
           <div class="overlay"></div>
-          <img class="d-block w-100" src="./band1.jpg" alt="First slide">
+          <img class="d-block w-100" src="./img/band1.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption text-left">
                 <h1>Artist Connect</h1>
@@ -115,7 +115,7 @@
 
         <div class="carousel-item">
           <div class="overlay"></div>
-          <img class="d-block w-100" src="main2.jpg" alt="Second slide">
+          <img class="d-block w-100" src="./img/main2.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <div class="main-text">
@@ -132,7 +132,7 @@
 
         <div class="carousel-item">
           <div class="overlay"></div>
-          <img class="d-block w-100" src="main3.jpg" alt="Third slide">
+          <img class="d-block w-100" src="./img/main3.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption text-right">
                 <h1>Great For Venues</h1>
@@ -237,7 +237,7 @@
             <div class="modal-body mb-1">
               <div class="md-form form-sm mb-5">
                 <i class="fas fa-envelope prefix"></i>
-                <input type="email" name="username" id="username" class="form-control form-control-sm validate">
+                <input name="username" id="username" class="form-control form-control-sm validate">
                 <label data-error="wrong" data-success="right" for="username">Your username</label>
               </div>
 

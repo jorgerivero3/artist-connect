@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Mason and Jorge">
 	<!-- Custom styles for this template -->
-<!-- 	<link href="./style.css" rel="stylesheet">
- -->
+	<link href="./css/style.css" rel="stylesheet">
+
 	<title>Artist Connect - {Band Name}</title>
 	<meta charset="utf-8">
 </head>
@@ -53,7 +53,7 @@
 	  <br>
 	<div class="row">
           <div class="card">
-            <img src="venue.jpg" alt="Card image cap">
+            <img src="./img/venue.jpg" alt="Card image cap">
             <p class="card-text">Something</p>
           </div>
 </body>

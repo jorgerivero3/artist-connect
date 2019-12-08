@@ -14,7 +14,7 @@
 
 
   <link href="./css/all.css" rel="stylesheet">
-  <link href="./style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
 	<title>Artist Connect - {Band Name}</title>
 	<meta charset="utf-8">
 </head>
@@ -58,7 +58,7 @@
 	  <div class="container pb-5">
 	  <div class="row">
 	  	<div class="col-4-">
-	  		<img alt="image of band" src="./band.jpg" class="img-thumbnail" style="width: 500px;">
+	  		<img alt="image of band" src="./img/band.jpg" class="img-thumbnail" style="width: 500px;">
 	  	</div>
 	  	<div class="col">
 	  		<h2>Station One</h2>

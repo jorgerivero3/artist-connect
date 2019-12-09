@@ -80,20 +80,21 @@
     </nav>
 
     <div class="container">
-
-    <h1>Edit Profile</h1>
-
+    <h1 class="pb-3">Edit Profile</h1>
+    <h3 class="pb-2">Update Photo</h3>
+    <div class="pb-3 pt-2">
+                 
     <form action="./upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
   
     </form>
+  </div>
 
     <!--- name here -->
-    <div>
+      <h3 class="pb-2">Update Name</h3>
+    <div class="pb-3 pt-2">
       <form action="./name.php" method="post">
-      Edit Name:
       <input type="text" name="bandName" id="bandName"><br><br>
 	  Are you a band or a venue?<br>
 	  <input type="radio" name="radio" value="band"> Band<br>

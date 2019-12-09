@@ -4,6 +4,18 @@
 
 	<?php
 	session_start();
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'cs329e_mitra_mmooring';
+  $DATABASE_PASS = 'banal5Fix3Soon';
+  $DATABASE_NAME = 'cs329e_mitra_mmooring';
+  // connect
+  $con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+  if ( $con->connect_error ) {
+	// show error if connect fails
+	die ('Failed to connect to MySQL: ' . $con->connect_error);
+  }
+  
+  $result = mysqli_query($con, "SELECT * from accounts WHERE (identity = 'band')");
 	?>
 	
 	<!-- Bootstrap core CSS -->
@@ -55,6 +67,19 @@
 
 	  <div class="container">
 	  <h1 style="padding-top: 15px; padding-bottom: 15px;">Bands</h1>
+	  <?php 
+	  while ($row = $result-> fetch_row())
+	  {
+		echo "<div class='row'>
+	  	<div class='col-2-'>
+	  		<img alt='image of band' src=". $row[4] . " class='img-thumbnail' style='width: 300px;'>
+	  	</div><div class='col'>
+	  		<a href='./band.php?data=".$row[1]."'><h2>".$row[5]."</h2></a>
+	  		<h5>Bio</h5>
+	  		<p>".$row[7]."</p>
+	  	</div></div><hr>";
+	  }?>
+	  <!--
 	  <div class="row">
 	  	<div class="col-2-">
 	  		<img alt="image of band" src="./img/band.jpg" class="img-thumbnail" style="width: 300px;">
@@ -66,33 +91,7 @@
 	  		<p>From the heart of Texas. Starting out in their garage here in town, they have brought a unique mix of blues to the Austin live music scene.</p>
 	  	</div>
 	  </div>
-	  <hr>
-
-	  <div class="row">
-	  	<div class="col-2-">
-	  		<img alt="image of band" src="./img/band2.jpg" class="img-thumbnail" style="width: 300px;">
-	  	</div>
-	  	<div class="col">
-	  		<a href="./band.php"><h2>Intercept</h2></a>
-	  		<p>Genre: Rock</p>
-	  		<h5>Bio</h5>
-	  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-	  	</div>
-	  </div>
-	  <hr> 
-
-	  <div class="row">
-	  	<div class="col-1-">
-	  		<img alt="image of band" src="./img/band3.jpg" class="img-thumbnail" style="width: 300px;">
-	  	</div>
-	  	<div class="col">
-	  		<a href="./band.php"><h2>Juice and The Suds</h2></a>
-	  		<p>Genre: Indie</p>
-	  		<h5>Bio</h5>
-	  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-	  	</div>
-	  </div>
-	  <hr> 
+	  <hr>--> 
 	</div>
 </body>	
 </html>

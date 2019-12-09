@@ -1,4 +1,3 @@
-
 <html>
 <head>
   <meta charset="utf-8">
@@ -31,19 +30,17 @@
   die ('Failed to connect to MySQL: ' . $con->connect_error);
 }
   $username = $_SESSION['username'];
-  $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
-  $result = mysqli_query($con, $photo);
-  $r = mysqli_fetch_array($result);
   
   //profile page  
   if (!isset($_SESSION['username'])) {
     echo "Please login to access this page" . "<br>";
-    echo "<a href='./index.html'>Return home</a>";
+    echo "<a href='./index.php'>Return home</a>";
     return;
   }
 
 ?>
 </head>
+
 <body>
 
   <!-- Navigation -->
@@ -81,29 +78,32 @@
         </div>
       </div>
     </nav>
-  
-<div class="container profile pt-5">
-    <!-- logged in user information -->
 
-<!--- image location here -->
-  <div class="row">
+    <div class="container">
+
+    <h1>Edit Profile</h1>
+
+    <form action="./upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+  
+    </form>
+
+    <!--- name here -->
     <div>
-      <?php echo '<img class="" src="'.$r['imagePath'].'">'; ?>
-    </div>
-    <div class="col-md-9">
-      <?php echo "<h1>" .$r['name'] . "</h1>"; ?>
+      <form action="./name.php" method="post">
+      Edit Name:
+      <input type="text" name="bandName" id="bandName"><br><br>
+	  Are you a band or a venue?<br>
+	  <input type="radio" name="radio" value="band"> Band<br>
+	  <input type="radio" name="radio" value="venue"> Venue<br>
+      <input type="submit" value="Submit Name" name="submit">
+    
+      </form>
     </div>
   </div>
-  <div class="row">
-    <button onclick="window.location='./edit_profile.php';">Edit Profile</button>
-  </div>
-    <?php  if (isset($_SESSION['username'])) : ?>
-    	<!-- <h3>Welcome <stronge><?php echo $_SESSION['username']; ?></strong></h3> -->
-    <?php endif ?>
-	
-	
-	<!--- add description here -->
-</div>
-		
+
+
+
 </body>
-</html>

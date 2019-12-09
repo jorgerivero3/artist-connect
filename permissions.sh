@@ -1,4 +1,5 @@
 chmod 644 *
+chmod +x permissions.sh
 
 #Directories
 chmod 777 uploads/

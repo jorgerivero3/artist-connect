@@ -7,6 +7,7 @@ $DATABASE_PASS = 'banal5Fix3Soon';
 $DATABASE_NAME = 'cs329e_mitra_mmooring';
 $username = $_SESSION['username'];
 $new_name = $_POST['bandName'];
+$ident = $_POST['radio'];
 // Try and connect using the info above.
 $con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( $con->connect_error ) {
@@ -15,8 +16,18 @@ if ( $con->connect_error ) {
 }
 
 //updates database with name
-$sql = "UPDATE accounts SET name='$new_name' WHERE username='$username'";
-$result = $con->query($sql);
+if (isset($_POST['submit'])) {
+	if(!empty($_POST['bandName'])){
+	
+	$sql = "UPDATE accounts SET name='$new_name' WHERE username='$username'";
+	$result = $con->query($sql);
+	}
+	if (isset($_POST['radio'])) {
+			$sql = "UPDATE accounts SET identity='$ident' WHERE username='$username'";
+			$result = $con->query($sql);
+			echo "You are currently a :".$_POST['radio'];
+		  }
+}
 
 if ($result == true) {
     echo "  and database record updated successfully";

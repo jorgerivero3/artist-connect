@@ -30,9 +30,6 @@
   die ('Failed to connect to MySQL: ' . $con->connect_error);
 }
   $username = $_SESSION['username'];
-  $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
-  $result = mysqli_query($con, $photo);
-  $r = mysqli_fetch_array($result);
   
   //profile page  
   if (!isset($_SESSION['username'])) {
@@ -84,26 +81,28 @@
 
     <div class="container">
     <h1 class="pb-3">Edit Profile</h1>
-
-
-
     <h3 class="pb-2">Update Photo</h3>
     <div class="pb-3 pt-2">
-      <form action="./upload.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
-      </form>
-    </div>
+                 
+    <form action="./upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+  
+    </form>
+  </div>
 
     <!--- name here -->
-    <h3 class="pb-2">Update Name</h3>
+      <h3 class="pb-2">Update Name</h3>
     <div class="pb-3 pt-2">
       <form action="./name.php" method="post">
-      <input type="text" name="bandName" id="bandName">
+      <input type="text" name="bandName" id="bandName"><br><br>
+	  Are you a band or a venue?<br>
+	  <input type="radio" name="radio" value="band"> Band<br>
+	  <input type="radio" name="radio" value="venue"> Venue<br>
       <input type="submit" value="Submit Name" name="submit">
+    
       </form>
     </div>
-
   </div>
 
 

@@ -4,6 +4,18 @@
 
 	<?php
 		session_start();
+		$DATABASE_HOST = 'localhost';
+		$DATABASE_USER = 'cs329e_mitra_mmooring';
+		$DATABASE_PASS = 'banal5Fix3Soon';
+		$DATABASE_NAME = 'cs329e_mitra_mmooring';
+		// connect
+		$con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+		if ( $con->connect_error ) {
+			// show error if connect fails
+			die ('Failed to connect to MySQL: ' . $con->connect_error);
+		}
+  
+		$result = mysqli_query($con, "SELECT * from accounts WHERE (identity = 'venue')");
 	?>
 	
 	<!-- Bootstrap core CSS -->
@@ -32,7 +44,7 @@
 	                <?php endif ?>
 	              </li>
 	              <li class="nav-item">
-	                <a class="nav-link" href="#">About</a>
+	                <a class="nav-link" href="./about.php">About</a>
 	              </li>
 	              <li class="nav-item">
 	                <a class="nav-link" href="./venues.php">Venues</a>
@@ -43,8 +55,6 @@
 	    		  <li class="nav-item">
 	            <?php  if (isset($_SESSION['username'])) : ?>
 	                <a href="./logout.php" class="btn btn-primary">Logout</a>
-	            <?php else : ?>
-	              <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
 	            <?php endif ?>
 	    		  </li>
 	              </li>
@@ -55,43 +65,18 @@
 
 	  <div class="container">
 	  <h1 style="padding-top: 15px; padding-bottom: 15px;">Venues</h1>
-	  <div class="row">
-	  	<div class="col-2-">
-	  		<img alt="image of band" src="./img/venue1.jpg" class="img-thumbnail" style="width: 300px;">
-	  	</div>
-	  	<div class="col">
-	  		<a href="./band.html"><h2>Club 101</h2></a>
-	  		<h5>Address</h5>
-	  		<p>77 James Drive
-Fullerton, CA 92831</p>
-	  	</div>
-	  </div>
-	  <hr>
-
-	  <div class="row">
-	  	<div class="col-2-">
-	  		<img alt="image of band" src="./img/venue2.jpg" class="img-thumbnail" style="width: 300px;">
-	  	</div>
-	  	<div class="col">
-	  		<a href="./band.html"><h2>The Salty Spitoon</h2></a>
-	  		<h5>Address</h5>
-	  		<p>247 State Ave.
-El Dorado, AR 71730</p>
-	  	</div>
-	  	</div>
-	  <hr> 
-
-	  <div class="row">
-	  	<div class="col-1-">
-	  		<img alt="image of band" src="./img/venue3.jpg" class="img-thumbnail" style="width: 300px;">
-	  	</div>
-	  	<div class="col">
-	  		<a href="./band.html"><h2>Weenie Hut Jr's</h2></a>
-	  		<h5>Address</h5>
-	  		<p>8246 North Dr.
-Fitchburg, MA 01420</p>
-	  	</div>
-	  </div>
+	  <?php 
+	  while ($row = $result-> fetch_row())
+	  {
+		echo "<div class='row'>
+	  	<div class='col-2-'>
+	  		<img alt='image of band' src=". $row[4] . " class='img-thumbnail' style='width: 300px;'>
+	  	</div><div class='col'>
+	  		<a href='./band.php?data=".$row[1]."'><h2>".$row[5]."</h2></a>
+	  		<h5>Bio</h5>
+	  		<p>".$row[7]."</p>
+	  	</div></div><hr>";
+	  }?>
 	  </div>
 </body>	
 </html>

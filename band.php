@@ -3,6 +3,20 @@
 <head>
 	<?php
 		session_start();
+		$DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'cs329e_mitra_mmooring';
+  $DATABASE_PASS = 'banal5Fix3Soon';
+  $DATABASE_NAME = 'cs329e_mitra_mmooring';
+  $usernameSent = $_GET['data'];
+  // connect
+  $con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+  if ( $con->connect_error ) {
+	// show error if connect fails
+	die ('Failed to connect to MySQL: ' . $con->connect_error);
+  }
+  
+  $result = mysqli_query($con, "SELECT * from accounts WHERE (username = '$usernameSent')");
+	$row = $result-> fetch_row();
 	?>
 	<title></title>
 	<!-- Bootstrap core CSS -->
@@ -15,7 +29,7 @@
 
   <link href="./css/all.css" rel="stylesheet">
   <link href="./css/style.css" rel="stylesheet">
-	<title>Artist Connect - {Band Name}</title>
+	<title>Artist Connect</title>
 	<meta charset="utf-8">
 </head>
 <body>
@@ -34,7 +48,7 @@
 	            <?php endif ?>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link" href="#">About</a>
+	            <a class="nav-link" href="./about.php">About</a>
 	          </li>
 	          <li class="nav-item">
 	            <a class="nav-link" href="./venues.php">Venues</a>
@@ -45,8 +59,6 @@
 			  <li class="nav-item">
 	        <?php  if (isset($_SESSION['username'])) : ?>
 	            <a href="./logout.php" class="btn btn-primary">Logout</a>
-	        <?php else : ?>
-	          <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
 	        <?php endif ?>
 			  </li>
 	          </li>
@@ -58,28 +70,24 @@
 	  <div class="container pb-5">
 	  <div class="row">
 	  	<div class="col-4-">
-	  		<img alt="image of band" src="./img/band.jpg" class="img-thumbnail" style="width: 500px;">
-	  	</div>
+	  		<?php echo "<img alt='image of band' src=".$row[4]." class='img-thumbnail' style='width: 500px;'>
+	  	";?>
+		</div>
 	  	<div class="col">
-	  		<h2>Station One</h2>
-	  		<p>Genre: Blues</p>
-	  		<button>Save to Favorites</button>
-	  		<button>Send a message</button>
+		<?php echo"
+	  		<h2>".$row[5]."</h2>
+	  <h4>Bio</h4><br> 
+	  		<p>".$row[7]."</p>
+	  		
+		";?>
 	  	</div>
 	  </div>
 	  <br>
-	  <div class="row">
-	  <div class="col">
-	  <h5>Bio</h5><br> 
-	  		<p>From the heart of Texas. Starting out in their garage here in town, they have brought a unique mix of blues to the Austin live music scene.</p>
-	  		</div>
-	  </div>
-	  <div class="row">
-	  	<h5>Links</h5>
-	  	<div class="col-lg-2 social">
-		  <i class="fab fa-instagram"></i>
-		  <i class="fab fa-twitter"></i>
-		</div>
+	  <?php echo"
+		<div class='col-lg-2 social'>
+		  <a href=".$row[8]."><i class='fab fa-instagram'></i></a>
+		</div>";
+		?>
 	  </div>
 	</div>
 

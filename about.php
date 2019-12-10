@@ -66,8 +66,6 @@
 		  <li class="nav-item">
         <?php  if (isset($_SESSION['username'])) : ?>
             <a href="./logout.php" class="btn btn-primary">Logout</a>
-        <?php else : ?>
-          <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
         <?php endif ?>
 		  </li>
           </li>
@@ -79,7 +77,7 @@
 	<div class="content" style="margin-top:20px">
 		<div>
 	
-					<div class="col-sm-3 card" id="card1" style="position:fixed;">
+					<div class="col-sm-3 card" id="card1" style="position:fixed;top:400px;left:600px;">
 						<!--<img class="card-img-top" src="" alt="Card image cap">-->
 						<div class="card-body">
 							<h5 class="card-title text-center"> Mason Mooring </h5>
@@ -89,7 +87,7 @@
 						</div>
 					</div>
 					
-					<div class="col-sm-3 card" id="card2">
+					<div class="col-sm-3 card" id="card2" style="position:fixed;top:200px;left:600px;">
 						<!--<img class="card-img-top" src="" alt="Card image cap">-->
 						<div class="card-body">
 							<h5 class="card-title text-center"> Jorge Rivero </h5>

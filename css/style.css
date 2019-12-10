@@ -8,6 +8,10 @@
   -o-background-size: cover;
   background-size: cover;
 }*/
+
+#biostyle {
+	font-size:12px;
+}
 body{
   padding-top: 70px;
 }

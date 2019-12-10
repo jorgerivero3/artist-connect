@@ -44,7 +44,7 @@
 	              <?php endif ?>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link" href="#">About</a>
+	              <a class="nav-link" href="./about.php">About</a>
 	            </li>
 	            <li class="nav-item">
 	              <a class="nav-link" href="./venues.php">Venues</a>
@@ -55,8 +55,6 @@
 	  		  <li class="nav-item">
 	          <?php  if (isset($_SESSION['username'])) : ?>
 	              <a href="./logout.php" class="btn btn-primary">Logout</a>
-	          <?php else : ?>
-	            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Login</a>
 	          <?php endif ?>
 	  		  </li>
 	            </li>

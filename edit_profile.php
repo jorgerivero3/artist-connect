@@ -96,10 +96,15 @@
     <div class="pb-3 pt-2">
       <form action="./name.php" method="post">
       <input type="text" name="bandName" id="bandName"><br><br>
+	  <h3 class="pb-2">Update Bio</h3>
+	  <textarea id="bioText" name="bioText" rows="7" cols="50"></textarea><br><br>
+	  <h3 class="pb-2">Update Social</h3>
+	  Please copy paste full https instagram link to show on your individual page
+	  <input type="text" name="socialName" id="socialName"><br><br>
 	  Are you a band or a venue?<br>
 	  <input type="radio" name="radio" value="band"> Band<br>
 	  <input type="radio" name="radio" value="venue"> Venue<br>
-      <input type="submit" value="Submit Name" name="submit">
+      <input type="submit" value="Submit Changes" name="submit">
     
       </form>
     </div>

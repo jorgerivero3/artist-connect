@@ -31,7 +31,7 @@
   die ('Failed to connect to MySQL: ' . $con->connect_error);
 }
   $username = $_SESSION['username'];
-  $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
+  $photo = "SELECT * FROM accounts WHERE username='$username'";
   $result = mysqli_query($con, $photo);
   $r = mysqli_fetch_array($result);
   
@@ -81,7 +81,6 @@
         </div>
       </div>
     </nav>
-  
 <div class="container profile pt-5">
     <!-- logged in user information -->
 
@@ -95,7 +94,10 @@
     </div>
   </div>
   <div class="row">
-    <button onclick="window.location='./edit_profile.php';">Edit Profile</button>
+	<p>To update your bio in your public page, or update your instagram page, edit here</p><br>
+  </div>
+  <div class="row">
+  <button onclick="window.location='./edit_profile.php';">Edit Profile</button>
   </div>
     <?php  if (isset($_SESSION['username'])) : ?>
     	<!-- <h3>Welcome <stronge><?php echo $_SESSION['username']; ?></strong></h3> -->

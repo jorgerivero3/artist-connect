@@ -2,9 +2,9 @@
 session_start();
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'cs329e_mitra_mmooring';
-$DATABASE_PASS = 'banal5Fix3Soon';
-$DATABASE_NAME = 'cs329e_mitra_mmooring';
+$DATABASE_USER = 'exkdsjszufcyiv';
+$DATABASE_PASS = 'b9b349ef1789507f99a76ea67d245e119c7f895f104cda9b772444efea26f929';
+$DATABASE_NAME = 'dblt6pefh8nddm';
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_error() ) {

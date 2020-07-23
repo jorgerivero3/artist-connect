@@ -20,16 +20,7 @@
   <?php
   session_start(); 
   //connection to database
-  $DATABASE_HOST = 'localhost';
-  $DATABASE_USER = 'cs329e_mitra_mmooring';
-  $DATABASE_PASS = 'banal5Fix3Soon';
-  $DATABASE_NAME = 'cs329e_mitra_mmooring';
-  // Try and connect using the info above.
-  $con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-  if ( $con->connect_error ) {
-    // If there is an error with the connection, stop the script and display the error.
-  die ('Failed to connect to MySQL: ' . $con->connect_error);
-}
+  include 'sql_con.php';
   $username = $_SESSION['username'];
   $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
   $result = mysqli_query($con, $photo);

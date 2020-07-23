@@ -20,13 +20,10 @@
   <link href="./css/style.css" rel="stylesheet">
 
   <?php
-  session_start(); 
+  session_start();
+  include 'sql_con.php'; 
   //connection to database
-  $con = pg_connect(getenv("DATABASE_URL"));
-
-  if (!$con){
-    die('failed to connect to Postgres Server');
-  }
+  
 
 /*
   $DATABASE_HOST = 'localhost';

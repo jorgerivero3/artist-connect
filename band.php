@@ -3,6 +3,7 @@
 <head>
 	<?php
 		session_start();
+		include 'sql_con.php';
 	?>
 	<title></title>
 	<!-- Bootstrap core CSS -->

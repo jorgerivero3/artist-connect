@@ -1,22 +1,13 @@
 <?php
 session_start();
 // Change this to your connection info.
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'cs329e_mitra_mmooring';
-$DATABASE_PASS = 'banal5Fix3Soon';
-$DATABASE_NAME = 'cs329e_mitra_mmooring';
-// Try and connect using the info above.
-$con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-if ( $con->connect_error ) {
-	// If there is an error with the connection, stop the script and display the error.
-	die ('Failed to connect to MySQL: ' . $con->connect_error);
-}
+include 'sql_con.php';
 // REGISTER USER
 if (isset($_POST['reg_username'])) {
   // receive all input values from the form
-  $username = mysqli_real_escape_string($con, $_POST['reg_username']);
-  $password_1 = mysqli_real_escape_string($con, $_POST['reg_password_1']);
-  $password_2 = mysqli_real_escape_string($con, $_POST['reg_password_2']);
+  $username = pg_escape_string($con, $_POST['reg_username']);
+  $password_1 = pg_escape_string($con, $_POST['reg_password_1']);
+  $password_2 = pg_escape_string($con, $_POST['reg_password_2']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -30,8 +21,8 @@ if (isset($_POST['reg_username'])) {
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
   $user_check_query = "SELECT * FROM accounts WHERE username='$username' LIMIT 1";
-  $result = mysqli_query($con, $user_check_query);
-  $user = mysqli_fetch_assoc($result);
+  $result = pg_query($con, $user_check_query);
+  $user = pg_fetch_assoc($result);
   
   if ($user) { // if user exists
     if ($user['username'] === $username) {
@@ -46,6 +37,7 @@ if (isset($_POST['reg_username'])) {
   	$password = $password_1;//encrypt the password before saving in the database
 
   	$sql = "INSERT INTO accounts (username, email, password, imagePath, name) VALUES('$username','blank@blank.com', '$password', './blank.jpg', '$username ')";
+    //TODO: What does this do?
   	$result = $con->query($sql);
 
 	if ($result == true) {

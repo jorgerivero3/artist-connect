@@ -4,18 +4,9 @@
 
 	<?php
 	session_start();
-  $DATABASE_HOST = 'localhost';
-  $DATABASE_USER = 'cs329e_mitra_mmooring';
-  $DATABASE_PASS = 'banal5Fix3Soon';
-  $DATABASE_NAME = 'cs329e_mitra_mmooring';
-  // connect
-  $con = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-  if ( $con->connect_error ) {
-	// show error if connect fails
-	die ('Failed to connect to MySQL: ' . $con->connect_error);
-  }
+  	include 'sql_con.php';
   
-  $result = mysqli_query($con, "SELECT * from accounts WHERE (identity = 'band')");
+  $result = pg_query($con, "SELECT * from accounts WHERE (identity = 'band')");
 	?>
 	
 	<!-- Bootstrap core CSS -->

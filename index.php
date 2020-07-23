@@ -22,10 +22,10 @@
   <?php
   session_start(); 
   //connection to database
-  $con = pg_connect(getenv("DATABASE_URL"))
+  $con = pg_connect(getenv("DATABASE_URL"));
 
   if (!$con){
-    die('failed to connect to Postgres Server')
+    die('failed to connect to Postgres Server');
   }
 
 /*

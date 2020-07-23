@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Change this to your connection info.
-$DATABASE_HOST = 'localhost';
+$DATABASE_HOST = 'ec2-52-86-116-94.compute-1.amazonaws.com';
 $DATABASE_USER = 'exkdsjszufcyiv';
 $DATABASE_PASS = 'b9b349ef1789507f99a76ea67d245e119c7f895f104cda9b772444efea26f929';
 $DATABASE_NAME = 'dblt6pefh8nddm';

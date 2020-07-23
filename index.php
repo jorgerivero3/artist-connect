@@ -37,6 +37,11 @@
   die ('Failed to connect to MySQL: ' . $con->connect_error);
 }
 */
+  if($con){
+    echo "Connection established";
+  } else {
+    echo "Connection to the PostgreSQL server failed.";
+  }
   $username = $_SESSION['username'];
   $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
   #$result = mysqli_query($con, $photo);

@@ -22,6 +22,13 @@
   <?php
   session_start(); 
   //connection to database
+  $con = pg_connect(getenv("DATABASE_URL"))
+
+  if (!$con){
+    die('failed to connect to Postgres Server')
+  }
+
+/*
   $DATABASE_HOST = 'localhost';
   $DATABASE_USER = 'cs329e_mitra_mmooring';
   $DATABASE_PASS = 'banal5Fix3Soon';
@@ -32,10 +39,12 @@
     // If there is an error with the connection, stop the script and display the error.
   die ('Failed to connect to MySQL: ' . $con->connect_error);
 }
+*/
   $username = $_SESSION['username'];
   $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
-  $result = mysqli_query($con, $photo);
-  $r = mysqli_fetch_array($result);
+  #$result = mysqli_query($con, $photo);
+  $result = pg_query($con, "SELECT author, email FROM authors");
+  $r = pg_fetch_array($result);
 
 ?>
  

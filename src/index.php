@@ -20,8 +20,8 @@
   <link href="./css/style.css" rel="stylesheet">
 
   <?php
-  session_start();
-  include 'sql_con.php'; 
+  // session_start();
+  // include 'sql_con.php'; 
   //connection to database
   
 
@@ -37,16 +37,16 @@
   die ('Failed to connect to MySQL: ' . $con->connect_error);
 }
 */
-  if($con){
-    echo "Connection established";
-  } else {
-    echo "Connection to the PostgreSQL server failed.";
-  }
-  $username = $_SESSION['username'];
-  $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
-  #$result = mysqli_query($con, $photo);
-  $result = pg_query($con, "SELECT author, email FROM authors");
-  $r = pg_fetch_array($result);
+  // if($con){
+  //   echo "Connection established";
+  // } else {
+  //   echo "Connection to the PostgreSQL server failed.";
+  // }
+  // $username = $_SESSION['username'];
+  // $photo = "SELECT imagePath, name FROM accounts WHERE username='$username'";
+  // #$result = mysqli_query($con, $photo);
+  // $result = pg_query($con, "SELECT author, email FROM authors");
+  // $r = pg_fetch_array($result);
 
 ?>
  

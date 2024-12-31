@@ -1,0 +1,51 @@
+services:
+  apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms: [linux/amd64]
+    container_name: lamp-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - postgres
+    networks:
+      - lamp-network
+
+  postgres:
+    image: postgres:13
+    build:
+      platforms: [linux/amd64]
+    container_name: lamp-postgres
+    environment:
+      POSTGRES_DB: myapp_db
+      POSTGRES_USER: myapp_user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - lamp-network
+
+  # phpmyadmin:
+  #   image: phpmyadmin:latest
+  #   container_name: lamp-phpmyadmin
+  #   environment:
+  #     PMA_HOST: mysql
+  #     MYSQL_ROOT_PASSWORD: rootpassword
+  #   ports:
+  #     - "8081:80"
+  #   depends_on:
+  #     - mysql
+  #   networks:
+  #     - lamp-network
+
+networks:
+  lamp-network:
+    driver: bridge
+
+volumes:
+  pg-data:
